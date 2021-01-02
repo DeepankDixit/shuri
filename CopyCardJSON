@@ -1,0 +1,225 @@
+{
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Catalogue",
+                            "weight": "Lighter",
+                            "color": "Accent"
+                        }
+                    ],
+                    "width": "stretch"
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "Select one of the three techs in Network Security :",
+            "wrap": true,
+            "separator": true,
+            "horizontalAlignment": "Left"
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.ShowCard",
+                    "title": "AAA",
+                    "card": {
+                        "type": "AdaptiveCard",
+                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                        "body": [
+                            {
+                                "type": "Container",
+                                "items": [
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Available Features:"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Input.ChoiceSet",
+                                "placeholder": "",
+                                "choices": [
+                                    {
+                                        "title": "Introduction",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "title": "Sub-tech 1: Dot1x / MAB",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "title": "Sub-tech 2: Guest",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "title": "Sub-tech 3: Profiling",
+                                        "value": "3"
+                                    },
+                                    {
+                                        "title": "Sub-tech 4: BYOD",
+                                        "value": "4"
+                                    },
+                                    {
+                                        "title": "Sub-tech 5: TrustSec",
+                                        "value": "5"
+                                    }
+                                ],
+                                "id": "jumptoAAAsubtech",
+                                "value": "0"
+                            },
+                            {
+                                "type": "ActionSet",
+                                "actions": [
+                                    {
+                                        "type": "Action.Submit",
+                                        "title": "Go to this AAA sub-tech",
+                                        "data": {
+                                            "aaaSubtech": true,
+                                            "vpnSubtech": false,
+                                            "fwSubtech": false
+                                        },
+                                        "id": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "id": "techaaa"
+                },
+                {
+                    "type": "Action.ShowCard",
+                    "title": "VPN",
+                    "card": {
+                        "type": "AdaptiveCard",
+                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                        "body": [
+                            {
+                                "type": "Container",
+                                "items": [
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Available Features:"
+                                    },
+                                    {
+                                        "type": "Input.ChoiceSet",
+                                        "placeholder": "Introduction",
+                                        "choices": [
+                                            {
+                                                "title": "RAVPN",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "title": "Site To Site VPN",
+                                                "value": "2"
+                                            },
+                                            {
+                                                "title": "SSL",
+                                                "value": "3"
+                                            },
+                                            {
+                                                "title": "IKE",
+                                                "value": "4"
+                                            },
+                                            {
+                                                "title": "DMVPN",
+                                                "value": "5"
+                                            },
+                                            {
+                                                "title": "Introduction",
+                                                "value": "0"
+                                            }
+                                        ],
+                                        "value": "0",
+                                        "id": "jumptoVPNsubtech"
+                                    },
+                                    {
+                                        "type": "ActionSet",
+                                        "actions": [
+                                            {
+                                                "type": "Action.Submit",
+                                                "title": "Go to this VPN sub-tech",
+                                                "id": "",
+                                                "data": {
+                                                    "aaaSubtech": false,
+                                                    "vpnSubtech": true,
+                                                    "fwSubtech": false
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "id": ""
+                },
+                {
+                    "type": "Action.ShowCard",
+                    "title": "FW",
+                    "card": {
+                        "type": "AdaptiveCard",
+                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                        "body": [
+                            {
+                                "type": "Container",
+                                "items": [
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "Available Features:"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Input.ChoiceSet",
+                                "placeholder": "Introduction",
+                                "choices": [
+                                    {
+                                        "title": "Introduction",
+                                        "value": "0"
+                                    },
+                                    {
+                                        "title": "NAT and its types",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "title": "ACLs",
+                                        "value": "2"
+                                    }
+                                ],
+                                "id": "jumptoFWsubtech",
+                                "value": "0"
+                            },
+                            {
+                                "type": "ActionSet",
+                                "actions": [
+                                    {
+                                        "type": "Action.Submit",
+                                        "title": "Go to this FW sub-tech",
+                                        "data": {
+                                            "aaaSubtech": false,
+                                            "vpnSubtech": false,
+                                            "fwSubtech": true
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "id": "techfw"
+                }
+            ],
+            "horizontalAlignment": "Center"
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2"
+}
